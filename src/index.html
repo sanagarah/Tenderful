@@ -16,12 +16,12 @@
 
 </h1></p></div>
     <ul>
-      <li class="home">Home</li>
-      <li><a href="#">About us</a></li>
+      <li class="home" href="section1">Home</li>
+      <li><a href="NannyRegister.html">Our nannies</a></li>
     
-      <li><a href="#NannyRegister.html"> Nanny Register</a> </li>
+      <li><a href="#section2"> Nanny Register</a> </li>
     
-      <li class="contact us"><a href="#">Contact</a></li>
+      <li class="contact us"><a href="#section3">Contact</a></li>
     </ul>
     <form action="#" method="post">
       <h2>members login</h2>
@@ -35,45 +35,47 @@
     
   </div>
   <div id="rightPan">
-    <h1><br />
-      <span><br />
-      </span> </h1>
-    <h2>About Tenderful</h2>
-    <p><span class="boldtext">G-Consultant is a free, tableless, W3C-compliant web design layout by Template World.</span> This template has been tested and proven compatible with all major browser environments and operating systems. You are free to modify the design to suit your tastes in any way you like.</p>
-    <p>We only ask you to not remove <span class="magedacolortext">"Design by Template World"</span> and the link http://www.templateworld.com from the footer of the template.</p>
-    <p class="bottompadding">If you are interested in seeing more of our free web template designs feel free to visit our website, Template World. We intend to add at least 25 new free templates in the coming month.</p>
-    <div id="rightmorePan">
-      
-    <div id="rightaddPan">
-   
-    </div>
+
+
+      <section id="section1">
+        <h1></h1>
+        <h2>Home</h2>
+        <p>Nowadays, many families need such a good babysitter to take care for their children. Sometimes may be for all day or a few hours. The most important thing for the family is to know the babysitter very well, so that families can do their work and trust the babysitter. However, it's hard to find.</p>
+        <p class="bottompadding">Tenderful is considered state-of-the-art. It helps families by allowing them to choose a trustful babysitter according to their needs based on the babysitter's information and evaluation. There are two benefits of applying Blockchain. The first one is to have a static and transparent platform which records babysitter 's activity history with all credibility. The main concept of the Blockchain is that its data are unmodifiable so it will never get manipulated. The second thing is because it's decentralized anyone who has experience can become a babysitter without the need to apply to any company. So, the babysitter can create her own business. </p>
+        </section>
+
+
+        <section id="section2">
+          <h2>Nanny Register</h2>
+          <h3 id="txt">Enter your information</h3>
+          <form action="#" method="post" id="form">
+          <input name="Your name" type="text" id="name" placeholder="name" />
+          <input name="Your name" type="text" id="age" placeholder="age"/>
+          <input name="Your name" type="text" id="info" placeholder="info" />
+        </form>
+          <button id="click" onclick="registerButtonNanny()">Click</button>
+          
+          </section>
+
+
+          <section id="section3">
+            <h2>Contact</h2>
+            <p>+9665034549</p>
+            <p class="bottompadding"> email@gmail.com </p>
+            </section>
     
-      <span></span></h4>
-    <p><span class="boldtext">---</p>
-    <p class="bottompadding"></p>
-    <div id="rightmorenextPan">
-     
-      <a href="#">more</a></div>
-  </div>
-</div>
+    <div id="rightmorePan"></div>
 <div id="footermainPan">
   <div id="footerPan">
     <ul>
       <li><a href="#">Home</a>|</li>
-      <li><a href="#">About us</a> |</li>
-      <li><a href="#">Network</a>|</li>
-      <li><a href="#">Submission</a> |</li>
-      <li><a href="#">Archives</a> |</li>
-      <li><a href="#">Finance</a> |</li>
+      <li><a href="#section2">Our nannies</a> |</li>
+      <li><a href="#">Nanny Register</a>|</li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <p class="copyright">-----</p>
-    
-    <ul class="templateworld">
-      
-      <li>Tenderful </li>
-    </ul>
-  </div>
 </div>
+</div>
+  <script type="text/javascript" src="./js/app.js"></script>
+
 </body>
 </html>

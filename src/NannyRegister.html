@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Consultant</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="mainPan">
+  <div id="leftPan">
+    <div id="leftTopPan"> <h1 > 
+<br />
+<br />
+<p style="text-indent:2em;"> 
+  Tenderful 
+
+</h1></p></div>
+    <ul>
+      <li class="home" href="index.html">Home</li>
+      <li><a href="index.html">About us</a></li>
+    
+      <li><a> Nanny Register</a> </li>
+    
+      <li class="contact us"><a href="index.html">Contact</a></li>
+    </ul>
+  
+    
+  </div>
+  <div id="rightPan">
+
+    <section id="section1">
+      <h1></h1>
+      <h2>Home</h2>
+      <h3 id="txt">Post</h3>
+      <form action="#" method="post" id="form">
+      <input name="Your name" type="text" id="name" />
+    </form>
+      <button id="click" onclick="myAlert()">Submit</button>
+      <h3 id="post"></h3>
+      </section>
+
+
+    
+    
+    <div id="rightmorePan"></div>
+<div id="footermainPan">
+    <div id="footerPan">
+        <ul>
+          <li><a href="#">Home</a>|</li>
+          <li><a href="#section2">Our nannies</a> |</li>
+          <li><a href="#">Nanny Register</a>|</li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+</div>
+<script>
+function myAlert() {
+  var post = document.getElementById("name").value;
+  var set = document.createElement("p").innerHTML = post;
+  document.getElementById("post").innerHTML = set;
+}
+</script> 
+</body>
+</html>

@@ -22,6 +22,12 @@ ul {
   list-style-type: none;
 }
 
+#form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 7px;
+}
+
 /*----MAIN PANEL----*/
 #mainPan {
   width: 691px;
@@ -208,7 +214,7 @@ ul {
 #rightPan h1 {
   width: 400px;
   height: 124px;
-  background: url(../images/header.jpg) 0 0 no-repeat #d33f9f;
+  background: url(../images/header.jpg) 0 0 no-repeat;
   color: #fff;
   font: 20px/13px Georgia, "Times New Roman", Times, serif;
   padding: 36px 0 0 13px;
@@ -320,6 +326,14 @@ ul {
 }
 #rightmorenextPan a:hover {
   text-decoration: underline;
+}
+
+#post {
+  background-color: #fff;
+  border: 1px solid #6b6854;
+  text-align: center;
+  width: fit-content;
+  width: fit-content;
 }
 
 #rightaddPan {
@@ -435,23 +449,8 @@ ul {
   width: 190px;
   background: #6b6854;
   color: #fff;
-  display: block;
-  position: absolute;
-  top: 160px;
-  left: 240px;
-}
-#footerPan ul.templateworld li {
-  height: 20px;
-}
-#footerPan ul.templateworld li a {
-  background: #6b6854;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 0px;
-}
-#footerPan ul.templateworld li a:hover {
-  text-decoration: underline;
+  display: flex;
+  justify-content: center;
 }
 
 #footerPan p.copyright {
