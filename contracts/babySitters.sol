@@ -1,4 +1,4 @@
-pragma solidity ^0.6.0;
+pragma solidity >=0.4.21 <0.7.0;
 
 contract babySitters {
     string public name;
@@ -7,11 +7,11 @@ contract babySitters {
     address[100] public nannyAddresses;
     address[100] public users;
     address[100] public nanniesHired;
-    uint public hiredNannies = 0;
-    uint public numberOfOpinioners = 0;
-    uint public someOfRates = 0;
+    uint256 public hiredNannies = 0;
+    uint256 public numberOfOpinioners = 0;
+    uint256 public someOfRates = 0;
     address developers;
-    uint[100] public money;
+    uint256[100] public money;
 
     struct Nanny {
         // all nanny data
@@ -26,55 +26,59 @@ contract babySitters {
         name = "Tenderful";
     }
 
-    function registerAsNanny(string memory _name,uint256 _age, string memory _info) public {
+    function registerAsNanny(
+        string memory _name,
+        uint256 _age,
+        string memory _info
+    ) public {
         // Create the nanny
         // Require valid _info
-      require(searchAddress(msg.sender),"Already registerd");
-      require(bytes(_name).length > 0 && _age >= 18 && bytes(_info).length > 5,"Something is wrong!!");
-      Nannies[msg.sender] = Nanny(_age, _name, _info,0); // nannyID ,age, name,info 
-      nannyAddresses[NannyCount] = msg.sender;
-      // Increment the nanny count
-       NannyCount++;
+        require(searchAddress(msg.sender), "Already registerd");
+        require(
+            bytes(_name).length > 0 && _age >= 18 && bytes(_info).length > 5,
+            "Something is wrong!!"
+        );
+        Nannies[msg.sender] = Nanny(_age, _name, _info, 0); // nannyID ,age, name,info
+        nannyAddresses[NannyCount] = msg.sender;
+        // Increment the nanny count
+        NannyCount++;
     }
-    
-    function searchAddress(address _sender) private view returns(bool){
+
+    function searchAddress(address _sender) private view returns (bool) {
         bool condition = true;
-        for(uint i=0;i<nannyAddresses.length;i++){
-            if(nannyAddresses[i]==_sender){
+        for (uint256 i = 0; i < nannyAddresses.length; i++) {
+            if (nannyAddresses[i] == _sender) {
                 condition = false;
             }
         }
         return condition;
     }
-    
-     function unRegisterANanny(address _unRegister) public {
-         
-         
-     }
 
-    function hireNanny(address _nanny) payable public {
-        require(isNotANanny(msg.sender),"Nanny cannot hireself!!");
-        require(isANanny(_nanny),"She is not registerd as a nanny!");
-        require(msg.value >=3 ether,"Not enough ether!!");
+    function unRegisterANanny(address _unRegister) public {}
+
+    function hireNanny(address _nanny) public payable {
+        require(isNotANanny(msg.sender), "Nanny cannot hireself!!");
+        require(isANanny(_nanny), "She is not registerd as a nanny!");
+        require(msg.value >= 3 ether, "Not enough ether!!");
         money[hiredNannies] = msg.value;
         nanniesHired[hiredNannies] = _nanny;
         hiredNannies++;
     }
-    
-    function isNotANanny(address _sender) private view returns(bool){
+
+    function isNotANanny(address _sender) private view returns (bool) {
         bool condition = true;
-        for(uint i=0;i<nannyAddresses.length;i++){
-            if(nannyAddresses[i]==_sender){
+        for (uint256 i = 0; i < nannyAddresses.length; i++) {
+            if (nannyAddresses[i] == _sender) {
                 condition = false;
             }
         }
         return condition;
     }
-    
-    function isANanny(address _sender) private view returns(bool){
+
+    function isANanny(address _sender) private view returns (bool) {
         bool condition = false;
-        for(uint i=0;i<nannyAddresses.length;i++){
-            if(nannyAddresses[i]==_sender){
+        for (uint256 i = 0; i < nannyAddresses.length; i++) {
+            if (nannyAddresses[i] == _sender) {
                 condition = true;
             }
         }
@@ -89,17 +93,17 @@ contract babySitters {
             }
         }
     }
-    
-    function tellOpinion(address _nanny, uint _rate) public {
-        require(_rate >= 0 && _rate <= 5,"Invalid rating!!");
+
+    function tellOpinion(address _nanny, uint256 _rate) public {
+        require(_rate >= 0 && _rate <= 5, "Invalid rating!!");
         numberOfOpinioners++;
-        uint average = calculateAverage(_rate);
-        Nannies[_nanny].point=average;
+        uint256 average = calculateAverage(_rate);
+        Nannies[_nanny].point = average;
     }
-    function calculateAverage(uint _rate) private returns(uint) {
+
+    function calculateAverage(uint256 _rate) private returns (uint256) {
         someOfRates += _rate;
-        uint averageCalculation = someOfRates /numberOfOpinioners;
+        uint256 averageCalculation = someOfRates / numberOfOpinioners;
         return averageCalculation;
     }
-    
 }
