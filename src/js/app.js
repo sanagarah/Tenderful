@@ -1,7 +1,3 @@
-var name = document.querySelectorAll("#name").value;
-var age = document.querySelectorAll("#age").value;
-var info = document.querySelectorAll("#info").value;
-
 App = {
   web3Provider: null,
   contracts: {},
@@ -71,8 +67,7 @@ App = {
   },
   //TODO Helloworld
   bindEvents: function () {
-    $(document).on("click", ".btn-adopt", App.handleAdopt);
-    $(document).on("click", ".btn-register-nanny", App.registerNanny);
+    $(document).on("click", "#click", App.registerButtonNanny);
   },
 
   markAdopted: function (adopters, account) {
@@ -137,6 +132,10 @@ App = {
   },
 
   registerButtonNanny: function (event) {
+    var name = document.getElementById("name").value;
+    var age = document.querySelectorAll("#age").value;
+    var info = document.querySelectorAll("#info").value;
+    console.log("hi");
     event.preventDefault();
 
     var babySittersInstance;
@@ -167,44 +166,7 @@ App = {
     });
   },
 
-//Hire Nanny
-    hireNanny: function (event) {
-    event.preventDefault();
-    window.location.href = "../NannyRegister.html";
-  },
-
-  hireNanny: function (event) {
-    event.preventDefault();
-
-    var babySittersInstance;
-
-    web3.eth.getAccounts(function (error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-
-      var account = accounts[0];
-
-      App.contracts.babySitters
-        .deployed()
-        .then(function (instance) {
-          babySittersInstance = instance;
-
-          // Execute adopt as a transaction by sending account
-          return babySittersInstance.hireNanny( , {
-            from: account,
-          });
-        })
-        .then(function (result) {
-          return console.log("done");
-        })
-        .catch(function (err) {
-          console.log(err.message);
-        });
-    });
-  },
-
-
+  //Hire Nanny
 };
 
 $(function () {
