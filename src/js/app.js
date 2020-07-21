@@ -38,7 +38,7 @@ App = {
   },
   //TODO Helloworld
   bindEvents: function () {
-    $(document).on('click', '.nannyRegisterButton', App.registerButtonNanny);
+    $(document).on("click", ".nannyRegisterButton", App.registerButtonNanny);
   },
 
   markAdopted: function (adopters, account) {
@@ -131,9 +131,7 @@ App = {
           console.log(err.message);
         });
     });
-  }
-
-  //Hire Nanny
+  },
 };
 
 $(function () {

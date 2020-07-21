@@ -331,6 +331,7 @@ ul {
 #post {
   background-color: #fff;
   border: 1px solid #6b6854;
+  border-radius: 15px;
   text-align: center;
   width: fit-content;
 }
