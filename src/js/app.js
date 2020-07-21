@@ -3,23 +3,6 @@ App = {
   contracts: {},
 
   init: async function () {
-    // Load pets.
-    /** $.getJSON('../pets.json', function (data) {
-            var petsRow = $('#petsRow');
-            var petTemplate = $('#petTemplate');
-
-            for (i = 0; i < data.length; i++) {
-                petTemplate.find('.panel-title').text(data[i].name);
-                petTemplate.find('img').attr('src', data[i].picture);
-                petTemplate.find('.pet-breed').text(data[i].breed);
-                petTemplate.find('.pet-age').text(data[i].age);
-                petTemplate.find('.pet-location').text(data[i].location);
-                petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-                petsRow.append(petTemplate.html());
-            }
-        }); **/
-
     return await App.initWeb3();
   },
 
@@ -51,23 +34,11 @@ App = {
   },
 
   initContract: function () {
-    /**  $.getJSON('Adoption.json', function (data) {
-            // Get the necessary contract artifact file and instantiate it with @truffle/contract
-            var AdoptionArtifact = data;
-            App.contracts.Adoption = TruffleContract(AdoptionArtifact);
-
-            // Set the provider for our contract
-            App.contracts.Adoption.setProvider(App.web3Provider);
-
-            // Use our contract to retrieve and mark the adopted pets
-            return App.markAdopted();
-        }); **/
-
     return App.bindEvents();
   },
   //TODO Helloworld
   bindEvents: function () {
-    $(document).on("click", "#click", App.registerButtonNanny);
+    $(document).on('click', '.nannyRegisterButton', App.registerButtonNanny);
   },
 
   markAdopted: function (adopters, account) {
@@ -132,10 +103,6 @@ App = {
   },
 
   registerButtonNanny: function (event) {
-    var name = document.getElementById("name").value;
-    var age = document.querySelectorAll("#age").value;
-    var info = document.querySelectorAll("#info").value;
-    console.log("hi");
     event.preventDefault();
 
     var babySittersInstance;
@@ -164,7 +131,7 @@ App = {
           console.log(err.message);
         });
     });
-  },
+  }
 
   //Hire Nanny
 };
