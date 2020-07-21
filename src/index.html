@@ -50,11 +50,11 @@
           <h2>Nanny Register</h2>
           <h3 id="txt">Enter your information</h3>
           <form action="#" method="post" id="form">
-          <input name="Your name" type="text" id="name" placeholder="name" />
-          <input name="Your name" type="text" id="age" placeholder="age"/>
-          <input name="Your name" type="text" id="info" placeholder="info" />
+          <input name="name" type="text" id="name"  autocomplete="off" placeholder="name" />
+          <input name="age" type="text" id="age"  autocomplete="off" placeholder="age"/>
+          <input name="info" type="text" id="info"  autocomplete="off" placeholder="info" />
         </form>
-          <button id="click" class= "nannyRegisterButton">Click</button>
+          <button id="click" class= "nannyRegisterButton" onclick="Alert()">Click</button>
         </div>
           </section>
 
@@ -77,6 +77,14 @@
 </div>
 </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    function Alert() {
+       document.getElementById("name").value ="";
+      document.createElement("age").value ="";
+      document.getElementById("info").value ="";
+      alert("You have been registered as nanny");
+    }
+    </script> 
   <script type="text/javascript" src="./js/app.js"></script>
 
 </body>
